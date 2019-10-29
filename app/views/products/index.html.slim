@@ -1,0 +1,43 @@
+p#notice
+  = notice
+h1
+  | Products
+table
+  thead
+    tr
+      th
+        | Identification
+      th
+        | Name
+      th
+        | Description
+      th
+        | Unity
+      th
+        | User
+      th
+        | Category
+      th[colspan="3"]
+  tbody
+    - @products.each do |product|
+      tr
+        td
+          = product.identification
+        td
+          = product.name
+        td
+          = product.description
+        td
+          = product.unity
+        td
+          = product.user
+        td
+          = product.category
+        td
+          = link_to 'Show', product
+        td
+          = link_to 'Edit', edit_product_path(product)
+        td
+          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Product', new_product_path

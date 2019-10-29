@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | In:
+  = @transfer.in
+p
+  strong
+    | Out:
+  = @transfer.out
+p
+  strong
+    | Quantity:
+  = @transfer.quantity
+= link_to 'Edit', edit_transfer_path(@transfer)
+|  | 
+= link_to 'Back', transfers_path
